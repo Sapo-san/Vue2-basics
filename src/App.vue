@@ -8,8 +8,14 @@
       <p>Ver código de fuente para comentarios sobre el funcionamiento de Vue2</p>
     </div>
 
+    <button class="btn btnAdd" v-on:click="mostrarAddTarea">Añadir Tarea</button>
+
     <!-- v-on escucha el evento "add-tarea" y de recibirlo, llama al metodo addTarea() -->
-    <AddTarea v-on:add-tarea="addTarea"/>
+    <!-- v-show muestra el componente dependiendo de la variable a la que se asocia -->
+    <AddTarea
+      v-on:add-tarea="addTarea"
+      v-on:esconder-add-tarea="esconderAddTarea"
+      v-show="mostrarAñadir"/>
 
     <!-- Acá v-bind asocia el prop "tareas" del componente con el "data() -> tareas" del estado -->
     <ListaTareas v-bind:tareas="tareas" v-on:eliminar-tarea="eliminarTarea"/>
@@ -49,7 +55,9 @@ export default {
           completed: false
         },
       ],
-      contador: 3
+      contador: 3,
+      mostrarAñadir: false
+
     }
   },
   // En "methods" se definen los métodos del componente. Esto no incluye los
@@ -66,6 +74,12 @@ export default {
       tarea.id = this.contador
       this.contador++
       this.tareas.push(tarea)
+    },
+    mostrarAddTarea(){
+      this.mostrarAñadir = true
+    },
+    esconderAddTarea() {
+      this.mostrarAñadir = false
     }
   }
 }
@@ -108,6 +122,11 @@ export default {
     padding: 7px 20px;
     cursor: pointer;
   }
+
+  .btnAdd {
+    margin-bottom: 1em;
+  }
+
   .btn:hover {
     background: #666;
   }

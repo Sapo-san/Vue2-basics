@@ -15,7 +15,7 @@
                 data() -> tarea: "" (string vacio)
             -->
             <input type="text" v-model="tarea" name="tarea" placeholder="Escribe tarea aquí"/>
-            <input type="submit" value="Añadir Tarea" class="btn"/>
+            <input type="submit" value="Añadir" class="btn"/>
         </form>
     </div>
 </template>
@@ -37,10 +37,11 @@ export default {
             */
             if (this.tarea !== "") {
                 this.$emit('add-tarea', { 
-                title: this.tarea,
-                completed: false
-            })
-            this.tarea = ""
+                    title: this.tarea,
+                    completed: false
+                })
+                this.tarea = ""
+                this.$emit('esconder-add-tarea')
             }
             
         }
@@ -49,7 +50,7 @@ export default {
 </script>
 <style>
     .añadir-tarea {
-        margin: 1em;
+        margin-bottom: 1em;
     }
 
     .añadir-tarea input {
