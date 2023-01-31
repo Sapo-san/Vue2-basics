@@ -1,0 +1,5 @@
+En la carpeta Assets irian imágenes de tener alguna en el proyecto
+
+Ejemplo: Se importarían así en App.vue
+
+<img alt="Vue logo" src="./assets/logo.png">

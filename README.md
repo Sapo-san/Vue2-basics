@@ -1,24 +1,17 @@
-# vue2-crash-course
+# Vue2 Repaso
+Repositorio donde aplico los conceptos básicos de Vue2.
 
-## Project setup
+Video de referencia que usé para crear este repositorio: [Vue2 Crash Course - Traversy Media](https://www.youtube.com/watch?v=qZXt1Aom3Cs)
+
+## Para instalar dependencias
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Para desarrollar
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Apuntes
+...
